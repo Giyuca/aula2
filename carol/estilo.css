@@ -1,0 +1,31 @@
+:root{
+    --fundo: #202239;
+    --azul: #1f65c2;
+}
+
+*{
+    margin:0; padding:0;
+    background-color: rgb(53, 1, 1); color:rgb(255, 255, 255);
+}
+header{
+    background-color: aliceblue;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
+header img{
+    height: 100%;
+}
+header ul{
+    background-color: grey;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header ul li{
+    margin: 20px;
+    width: 150px;
+    height: 30px;
+    background-color: rgb(206, 207, 219);
+}
