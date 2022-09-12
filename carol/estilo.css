@@ -1,17 +1,22 @@
 :root{
-    --fundo: #202239;
-    --azul: #1f65c2;
+    --fundo: #030d7c;
+    --azul: hsl(214, 100%, 26%);
+    --branco: #f2f2f2;
+    
+
 }
 
 *{
     margin:0; padding:0;
-    background-color: rgb(53, 1, 1); color:rgb(255, 255, 255);
+    background-color: var(--fundo);color: var(--branco);
 }
 header{
     background-color: aliceblue;
     height: 300px;
     display: flex;
-    flex-wrap: wrap;
+    justify-self: center;
+    align-items: center;
+    text-align: center;
 }
 header img{
     height: 100%;
@@ -24,8 +29,52 @@ header ul{
     align-items: center;
 }
 header ul li{
+    display: flex;
     margin: 20px;
     width: 150px;
     height: 30px;
     background-color: rgb(206, 207, 219);
+    background-image: linear-gradient(rgb(41, 55, 255),rgb(0, 0, 0));
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.baner{
+    height: 500px;
+    animation: slide1 10s infinite;
+}
+
+@keyframes slide1{
+    0%,25%{
+        background-image: url(etec.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto ;
+    }
+    25%,55%{
+        background-image: url(info.jpg);
+        background-image: url(etec.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto ;
+    }
+    55%,75%{
+        background-image: url(logo-adm.jpg);
+        background-image: url(etec.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto ;
+    }
+    75%,100%{
+        background-image: url(marketing.jpg);
+        background-image: url(etec.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: auto ;
+    }
+}
+
+.local{
+    background-color: var(--fundo);
 }
