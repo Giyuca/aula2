@@ -1,0 +1,62 @@
+App.js
+
+import { Text, View, FlatList } from 'react-native';
+import Detalhes from './sources/mocks/telas/Carrinho/Detalhes';
+import Topo from './sources/mocks/telas/Carrinho/Topo';
+import Mocks from "./sources/mocks/carrinho";
+import Item from "./sources/telas/Carrinho/Item";
+
+export default function App() {
+  return (
+    <View>
+      <Text>Principal</Text>
+      <Topo {...Mocks.topo}/>
+      <Detalhes  {...Mocks.detalhes} />
+      
+      <FlatList
+        data={Mocks.itens.lista}
+        renderItem={Item}
+        keyExtractor={({nome})=>nome}
+      />
+    </View>
+  )
+}
+
+
+Item.js
+import { Text, View, Image } from "react-native";
+
+
+    export default function Item({item:{nome,imagem,descricao,preco}}){
+        return (
+            <View key={nome}>
+                <Text>{nome}</Text>
+                <Text>{descricao}</Text>
+                <Image
+                    source={imagem}
+                    style={{height:50,width:50,resizeMode:'contain'}}
+
+                />
+                <Text>{preco}</Text>
+
+            </View>
+        );
+    }
+    
+   Detalhes
+   import { Text, View } from 'react-native';
+
+export default function Detalhes({titulo, tituloProduto, descricao, preco, imagem}) {
+  return (
+    <View>
+      <Text>{titulo}</Text>
+      <Text>{tituloProduto}</Text>
+      <Text>{descricao}</Text>
+      <Text>{preco}</Text>
+      <Image 
+            source={imagem}
+            style={{height:50, width:50}}
+      />
+    </View>
+  )
+}
